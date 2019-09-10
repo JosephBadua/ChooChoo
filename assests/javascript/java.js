@@ -25,7 +25,13 @@ console.log(err);
 }
 //
 // Getting the Current Time
-var now = moment();
+var timeNow = moment().format('hh:mm');
+console.log(timeNow);
+var addMinutes = moment().add(5, 'minutes').format('hh:mm');
+console.log(addMinutes);
+var startTime = (moment("20:00", 'HH:mm').format('hh:mm a'));
+console.log(startTime);
+
 
 //
 $(document).ready(function() {
