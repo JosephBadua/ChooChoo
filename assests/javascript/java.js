@@ -6,7 +6,9 @@ var ref = database.ref()
 // event listener 
 ref.on('value', gotData);
 
-// this function gets called every time there is a change in value 
+// this function gets called every time there is a change in value *---'
+
+
 function gotData(data) {
     var trainData = (data.val());
     console.log(trainData);
@@ -17,11 +19,43 @@ function gotData(data) {
         var trainName = trainData[t].trainName;
         var trainDestination = trainData[t].trainDestination;
         var trainMinutes = trainData[t].trainMinutes;
-        //confusing I know but it works
-        var trainTime = trainData[t].trainTime;
-        console.log(trainTime)
-        console.log(trainName, trainDestination, trainTime, trainMinutes);
-        var newRow = "<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + trainMinutes + "</td></tr>"
+        var trainOne = trainData[t].trainFirst;
+        var trainTwo = trainData[t].trainSecond;
+               // MOMENT THAT PULLS THE CURRENT TIME
+               var timeNow = moment();
+               var nowHour =  moment().format('HH');
+               var nowMinutes =  moment().format('mm');
+               timeNow.set({
+                   'hour': nowHour,
+                   'minute': nowMinutes
+                   });
+               console.log(timeNow);
+       
+               // THIS IS ANOTHER MOMENT THAT INPUTS THE FIRST ARRIVAL TIME
+               var startTime = moment()
+               startTime.set({
+               'hour': trainOne,
+               'minute': trainTwo,
+               });
+               console.log(startTime);
+   
+               if (timeNow < startTime) {
+                   console.log(startTime)
+                   var minutesAway = startTime.diff(timeNow, 'minutes');
+                   console.log(minutesAway);
+                   var nextArrival = startTime.format('hh:mm a');
+               } else {
+                   while (timeNow >= startTime) {
+                       startTime.add(trainMinutes, 'minutes');
+                       if (startTime >= timeNow) {
+                       var minutesAway = startTime.diff(timeNow, 'minutes');
+                       console.log(minutesAway);
+                       var nextArrival = startTime.format('hh:mm a');  
+                       }
+                   };   
+               };
+                       
+        var newRow = "<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + trainMinutes + "</td><td>" + minutesAway + "</td><td>" + nextArrival + "</td></tr>"
         $(".table").append(newRow);
     }
     ref.off('value', gotData);
@@ -29,10 +63,12 @@ function gotData(data) {
 
 
 
-
+var song = new Audio ("../ChooChoo/IceCubevsThomastheTankEngine-Itwasagoodtrain.mp3");
 //
 $(document).ready(function () {
+    song.play();
     $("#buttonSubmit").on("click", function () {
+        ref.off('value', gotData);
         $("<tr>,<td>").empty();
         var train = $("#inputTrain").val().trim();
         var destination = $("#inputDestination").val().trim();
@@ -49,11 +85,14 @@ $(document).ready(function () {
         console.log(time)
         console.log(minutes)
             // MOMENT THAT PULLS THE CURRENT TIME
-
-            var timeNow = moment()
-            console.log(timeNow.format('hh:mm'));
-    
-            //
+            var timeNow = moment();
+            var nowHour =  moment().format('HH');
+            var nowMinutes =  moment().format('mm');
+            timeNow.set({
+                'hour': nowHour,
+                'minute': nowMinutes
+                });
+            console.log(timeNow);
     
             // THIS IS ANOTHER MOMENT THAT INPUTS THE FIRST ARRIVAL TIME
             var startTime = moment()
@@ -61,30 +100,33 @@ $(document).ready(function () {
             'hour': timeOne,
             'minute': timeTwo,
             });
-            console.log(startTime.format('hh:mm'))
-            timeTwo = parseFloat(timeTwo);
-            minutes = parseFloat(minutes)
-            var nextTime = moment ()
-            nextTime.set({
-            'hour': timeOne,
-            'minute': (timeTwo + minutes),
-            })
-            console.log(nextTime);
-            console.log(nextTime.format('hh:mm'));
-            // 
-            var diff = nextTime.diff(startTime, 'minutes')
+            console.log(startTime);
+
+            if (timeNow < startTime) {
+                console.log(startTime)
+                var minutesAway = startTime.diff(timeNow, 'minutes');
+                console.log(minutesAway);
+                var nextArrival = startTime.format('hh:mm a');
+            } else {
+                while (timeNow >= startTime) {
+                    startTime.add(minutes, 'minutes');
+                    if (startTime >= timeNow) {
+                    var minutesAway = startTime.diff(timeNow, 'minutes');
+                    console.log(minutesAway);
+                    var nextArrival = startTime.format('hh:mm a');  
+                    }
+                };   
+            };
+                    
+
     
-            // 
-            console.log(diff)
-            //
-    
-        var newRow = "<tr><td>" + train + "</td><td>" + destination + "</td><td>" + minutes + "</td></tr>"
+        var newRow = "<tr><td>" + train + "</td><td>" + destination + "</td><td>" + minutes + "</td><td>" + minutesAway + "</td><td>" + nextArrival + "</td></tr>"
         $(".table").append(newRow);
-        var trainAdd = database.ref().push();
-        trainAdd.set({
+        firebase.database().ref().push().set({
         trainName: train,
         trainDestination: destination,
-        trainTime: time,
+        trainFirst: timeOne,
+        trainSecond: timeTwo,
         trainMinutes: minutes
         });
     });

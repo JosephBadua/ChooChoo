@@ -1,118 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="../ChooChoo/assests/javascript/moment.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../ChooChoo/assests/css/style.css">
     <title>Document</title>
-</head>
-<body>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="jumbotron">
-        <h1 class="display-4">Choo CHoo</h1>
+  </head>
+  <body>
+    <div class="face">
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="jumbotron">
+            <h1 class="display-4">Chugga Chugga Choo Choo Chee Chee</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Train Station</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency (in Minutes)</th>
+                <th scope="col">Minutes Away</th>
+                <th scope="col">Next Arrival</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="inputTrain">Train Name</label>
+              <input
+                type="email"
+                class="form-control"
+                id="inputTrain"
+                placeholder="Station Name"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputDestination">Destination</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputDestination"
+              placeholder="Destination"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputTime"
+              >First Arrival Time (HH:MM) Military Time</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="inputState"
+              placeholder="00:00"
+            />
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="inputMinutes">Frequency in Minutes</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputMinutes"
+                placeholder="00"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <button type="submit" id="buttonSubmit" class="btn btn-primary">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <table class="table table-dark">
-        <thead>
-          <tr>
-            <th scope="col">Train Station</th>
-            <th scope="col">Destination</th>
-            <th scope="col">Frequency (in Minutes)</th>
-            <th scope="col">Minutes Away</th>
-            <th scope="col">Next Arrival</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">The Polar Express</th>
-            <td>North Pole</td>
-            <td>525600</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">Trans-Siberian Express</th>
-            <td>Moscow</td>
-            <td>125000</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">Hogwarts Express</th>
-            <td>Hogwarts</td>
-            <td>87600</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-        <div class="form-row">
-          <div class="form-group col-md-12">
-            <label for="inputTrain">Train Name</label>
-            <input type="email" class="form-control" id="inputTrain" placeholder="Station Name">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="inputDestination">Destination</label>
-          <input type="text" class="form-control" id="inputDestination" placeholder="Destination">
-        </div>
-        <div class="form-group">
-          <label for="inputTime">First Arrival Time (HH:MM) Military Time</label>
-          <input type="text" class="form-control" id="inputState" placeholder="00:00">
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-12">
-            <label for="inputMinutes">Frequency in Minutes</label>
-             <input type="text" class="form-control" id="inputMinutes" placeholder="00">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <button type="submit" id="buttonSubmit" class="btn btn-primary">Submit</button>
-          </div>
-        </div>
-    </div>
-  </div>
-</div>    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
 
-
- <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBV-kLxpIGhs0BGqaj04D-kzyyqZkXOc88",
-    authDomain: "choochoo-272a5.firebaseapp.com",
-    databaseURL: "https://choochoo-272a5.firebaseio.com",
-    projectId: "choochoo-272a5",
-    storageBucket: "choochoo-272a5.appspot.com",
-    messagingSenderId: "357208523153",
-    appId: "1:357208523153:web:dfc34076d28822ec059a30"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  console.log(firebase);
-  var database = firebase.database();
-  console.log(database);
-</script>
- <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
- <script src="../ChooChoo/assests/javascript/java.js"></script>
-
-</body>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBV-kLxpIGhs0BGqaj04D-kzyyqZkXOc88",
+        authDomain: "choochoo-272a5.firebaseapp.com",
+        databaseURL: "https://choochoo-272a5.firebaseio.com",
+        projectId: "choochoo-272a5",
+        storageBucket: "choochoo-272a5.appspot.com",
+        messagingSenderId: "357208523153",
+        appId: "1:357208523153:web:dfc34076d28822ec059a30"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      console.log(firebase);
+      var database = firebase.database();
+      console.log(database);
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../ChooChoo/assests/javascript/java.js"></script>
+  </body>
 </html>

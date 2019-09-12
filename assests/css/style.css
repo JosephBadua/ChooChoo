@@ -1,0 +1,21 @@
+.face {
+    width: 100%;
+    height: 800px;
+    z-index: 1;
+    background-image: url("../images/train.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.jumbotron {
+    background: black !important;
+    border-radius: 5em !important;
+}
+.table {
+    font-size: 2em !important; 
+}
+.display-4 {
+    text-align: center !important;
+    font-size: 6em !important;
+    font-weight: bolder;
+    color: white !important;
+}
