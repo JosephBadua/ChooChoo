@@ -62,11 +62,8 @@ function gotData(data) {
 }
 
 
-
-var song = new Audio ("../ChooChoo/IceCubevsThomastheTankEngine-Itwasagoodtrain.mp3");
 //
 $(document).ready(function () {
-    song.play();
     $("#buttonSubmit").on("click", function () {
         ref.off('value', gotData);
         $("<tr>,<td>").empty();
@@ -117,8 +114,7 @@ $(document).ready(function () {
                     }
                 };   
             };
-                    
-
+                
     
         var newRow = "<tr><td>" + train + "</td><td>" + destination + "</td><td>" + minutes + "</td><td>" + minutesAway + "</td><td>" + nextArrival + "</td></tr>"
         $(".table").append(newRow);
