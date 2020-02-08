@@ -1,9 +1,38 @@
 body {
-    background: skyblue;
+    background-image: url('../images/train.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.container-fluid {
+    width: 90% !important;
+    margin: auto;
+    padding: 2em;
 }
 .table {
     font-size: 2em !important; 
 }
+th {
+    font-family: 'Bebas Neue', cursive;
+}
+
+td {
+    font-family: 'Comfortaa', cursive;
+}
+
+.inputLabel {
+    background: ghostwhite;
+    font-family: 'Comfortaa', cursive;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    border: 3px solid black
+}
+.inputLabel:hover {
+    background: lightblue;
+}
+.form-control {
+    border-radius: 0.5em;
+}
+
 .form-group, .form-control {
     font-size: 2rem;
 }
@@ -12,4 +41,9 @@ body {
     font-size: 6em !important;
     font-weight: bolder;
     color: white !important;
+}
+.bigButt {
+    font-size: 2em;
+    font-family: 'Comfortaa', cursive;
+    border-radius: 0.5em;
 }

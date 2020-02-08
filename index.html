@@ -4,40 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="../ChooChoo/assests/javascript/moment.js"></script>
+    <script src="/assests/javascript/moment.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="../ChooChoo/assests/css/style.css">
-    <title>Document</title>
+    <!--FAVICON-->
+    <link rel="shortcut icon" type="image/png" href="/assests/images/favicon.png"/>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="/assests/css/style.css">
+    <!--CUSTOM FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Comfortaa&display=swap" rel="stylesheet">
+    <title>Train Station</title>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-          <table class="table table-dark">
-            <thead>
-              <tr>
-                <th scope="col">Train Station</th>
-                <th scope="col">Destination</th>
-                <th scope="col">Frequency (in Minutes)</th>
-                <th scope="col">Minutes Away</th>
-                <th scope="col">Next Arrival</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
+          <div class="table-size">
+            <table class="table table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Train Station</th>
+                  <th scope="col">Destination</th>
+                  <th scope="col">Frequency (in Minutes)</th>
+                  <th scope="col">Minutes Away</th>
+                  <th scope="col">Next Arrival</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="inputTrain">Train Name</label>
+              <label class="inputLabel" for="inputTrain">Train Name</label>
               <input
                 type="email"
                 class="form-control"
@@ -47,7 +54,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="inputDestination">Destination</label>
+            <label class="inputLabel" for="inputDestination">Destination</label>
             <input
               type="text"
               class="form-control"
@@ -56,7 +63,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="inputTime"
+            <label class="inputLabel" for="inputTime"
               >First Arrival Time (HH:MM) Military Time</label
             >
             <input
@@ -68,7 +75,7 @@
           </div>
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label for="inputMinutes">Frequency in Minutes</label>
+              <label class="inputLabel" for="inputMinutes">Frequency in Minutes</label>
               <input
                 type="text"
                 class="form-control"
@@ -79,7 +86,7 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <button type="submit" id="buttonSubmit" class="btn btn-primary">
+              <button type="submit" id="buttonSubmit" class="btn btn-primary bigButt">
                 Submit
               </button>
             </div>
@@ -116,6 +123,6 @@
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
       crossorigin="anonymous"
     ></script>
-    <script src="../ChooChoo/assests/javascript/java.js"></script>
+    <script src="/assests/javascript/java.js"></script>
   </body>
 </html>
